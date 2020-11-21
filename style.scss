@@ -1,0 +1,158 @@
+$darkGray: hsl(0, 0%, 59%);
+$VeryDarkGray: hsl(0, 0%, 17%);
+
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 18px;
+  box-sizing: border-box;
+  height: 100%;
+}
+
+body {
+  margin: 0 auto;
+  width: 100%;
+  height: 100%;
+  max-width: 1440px;
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  grid-auto-rows: minmax(200px, auto);
+  font-family: "Rubik", sans-serif;
+}
+header {
+  position: relative;
+  grid-row: 1;
+  background: url("./images/pattern-bg.png") center top;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  width: 100%;
+  .container-header {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    h2 {
+      color: white;
+      font-weight: 500;
+      font-size: 2rem;
+    }
+    .input-location {
+      width: 50%;
+      input {
+        border: none;
+        width: 94%;
+        border-radius: 10px 0px 0px 10px;
+        position: relative;
+        height: 40px;
+        padding-left: 20px;
+        font-size: 0.8rem;
+        font-weight: 500;
+      }
+      button {
+        position: absolute;
+        border-radius: 0px 10px 10px 0px;
+        height: 42px;
+
+        border: none;
+        background-color: $VeryDarkGray;
+        color: white;
+        font-size: 1rem;
+      }
+    }
+  }
+}
+.leaflet-container.leaflet-touch-drag.leaflet-touch-zoom {
+  grid-row: 2/4;
+  z-index: 0;
+  position: relative;
+}
+.container-data {
+  position: absolute;
+  margin-right: auto;
+  margin-left: auto;
+  top: 10rem;
+  // left: 42rem;
+  border-radius: 20px;
+  width: 75%;
+  text-align: left;
+  height: 8rem;
+  background-color: white;
+  z-index: 1;
+  .location li {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    color: gray;
+    font-size: 0.7rem;
+    p {
+      font-size: 1rem;
+      font-weight: 500;
+      color: black;
+    }
+    span {
+      width: 3px;
+      height: 70px;
+      margin-top: 30px;
+      border-left: 1px solid lightgray;
+      padding-left: -30px;
+    }
+    ul {
+      letter-spacing: 0.1rem;
+      font-size: 0.6rem;
+      font-weight: 500;
+      padding: 0;
+      text-align: left;
+    }
+  }
+}
+
+.attribution {
+  grid-row: 4;
+  font-size: 11px;
+  text-align: center;
+  align-self: end;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
+@media screen and(max-width : 700px) {
+  header {
+    .container-header {
+      .input-location {
+        input {
+          width: 80%;
+        }
+      }
+    }
+  }
+
+  .container-data {
+    margin-top: -25rem;
+    height: 19rem;
+
+    .location > li {
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-auto-rows: minmax(80px, auto);
+      justify-content: center;
+      align-items: center;
+
+      .trait {
+        padding: 0;
+      }
+      span {
+        display: none;
+      }
+    }
+  }
+}

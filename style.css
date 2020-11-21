@@ -1,0 +1,195 @@
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: inherit;
+          box-sizing: inherit;
+}
+
+html {
+  font-size: 18px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  height: 100%;
+}
+
+body {
+  margin: 0 auto;
+  width: 100%;
+  height: 100%;
+  max-width: 1440px;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[1];
+      grid-template-columns: repeat(1, 1fr);
+  grid-auto-rows: minmax(200px, auto);
+  font-family: "Rubik", sans-serif;
+}
+
+header {
+  position: relative;
+  -ms-grid-row: 1;
+  grid-row: 1;
+  background: url("./images/pattern-bg.png") center top;
+  background-size: cover;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  width: 100%;
+}
+
+header .container-header {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+header .container-header h2 {
+  color: white;
+  font-weight: 500;
+  font-size: 2rem;
+}
+
+header .container-header .input-location {
+  width: 50%;
+}
+
+header .container-header .input-location input {
+  border: none;
+  width: 94%;
+  border-radius: 10px 0px 0px 10px;
+  position: relative;
+  height: 40px;
+  padding-left: 20px;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+header .container-header .input-location button {
+  position: absolute;
+  border-radius: 0px 10px 10px 0px;
+  height: 42px;
+  border: none;
+  background-color: #2b2b2b;
+  color: white;
+  font-size: 1rem;
+}
+
+.leaflet-container.leaflet-touch-drag.leaflet-touch-zoom {
+  -ms-grid-row: 2;
+  -ms-grid-row-span: 2;
+  grid-row: 2/4;
+  z-index: 0;
+  position: relative;
+}
+
+.container-data {
+  position: absolute;
+  margin-right: auto;
+  margin-left: auto;
+  top: 10rem;
+  border-radius: 20px;
+  width: 75%;
+  text-align: left;
+  height: 8rem;
+  background-color: white;
+  z-index: 1;
+}
+
+.container-data .location li {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: gray;
+  font-size: 0.7rem;
+}
+
+.container-data .location li p {
+  font-size: 1rem;
+  font-weight: 500;
+  color: black;
+}
+
+.container-data .location li span {
+  width: 3px;
+  height: 70px;
+  margin-top: 30px;
+  border-left: 1px solid lightgray;
+  padding-left: -30px;
+}
+
+.container-data .location li ul {
+  letter-spacing: 0.1rem;
+  font-size: 0.6rem;
+  font-weight: 500;
+  padding: 0;
+  text-align: left;
+}
+
+.attribution {
+  -ms-grid-row: 4;
+  grid-row: 4;
+  font-size: 11px;
+  text-align: center;
+  -ms-flex-item-align: end;
+      -ms-grid-row-align: end;
+      align-self: end;
+}
+
+.attribution a {
+  color: #3e52a3;
+}
+
+@media screen and (max-width: 700px) {
+  header .container-header .input-location input {
+    width: 80%;
+  }
+  .container-data {
+    margin-top: -25rem;
+    height: 19rem;
+  }
+  .container-data .location > li {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+    grid-auto-rows: minmax(80px, auto);
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .container-data .location > li .trait {
+    padding: 0;
+  }
+  .container-data .location > li span {
+    display: none;
+  }
+}
+/*# sourceMappingURL=style.css.map */
