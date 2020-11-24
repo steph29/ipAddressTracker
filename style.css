@@ -69,14 +69,15 @@ header .container-header h2 {
 
 header .container-header .input-location {
   width: 50%;
+  position: relative;
+  height: 60px;
 }
 
 header .container-header .input-location input {
   border: none;
-  width: 94%;
-  border-radius: 10px 0px 0px 10px;
-  position: relative;
-  height: 40px;
+  width: 92%;
+  height: 100%;
+  border-radius: 15px 0px 0px 15px;
   padding-left: 20px;
   font-size: 0.8rem;
   font-weight: 500;
@@ -84,8 +85,10 @@ header .container-header .input-location input {
 
 header .container-header .input-location button {
   position: absolute;
-  border-radius: 0px 10px 10px 0px;
-  height: 42px;
+  right: 0;
+  border-radius: 0px 15px 15px 0px;
+  height: 104%;
+  width: 8%;
   border: none;
   background-color: #2b2b2b;
   color: white;
@@ -104,13 +107,37 @@ header .container-header .input-location button {
   position: absolute;
   margin-right: auto;
   margin-left: auto;
-  top: 10rem;
+  top: 70%;
   border-radius: 20px;
   width: 75%;
   text-align: left;
   height: 8rem;
   background-color: white;
   z-index: 1;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: 1fr;
+      grid-template-rows: 1fr;
+  -ms-grid-columns: 1fr;
+      grid-template-columns: 1fr;
+}
+
+.container-data .location {
+  -ms-grid-row: 1;
+  grid-row: 1;
+  -ms-grid-column: 1;
+  grid-column: 1;
+  -ms-flex-item-align: center;
+      align-self: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .container-data .location li {
@@ -154,23 +181,36 @@ header .container-header .input-location button {
   -ms-grid-row: 4;
   grid-row: 4;
   font-size: 11px;
-  text-align: center;
-  -ms-flex-item-align: end;
-      -ms-grid-row-align: end;
-      align-self: end;
+  position: absolute;
+  bottom: 0;
 }
 
 .attribution a {
   color: #3e52a3;
 }
 
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 968px) {
+  header {
+    -ms-grid-row: 1;
+    grid-row: 1;
+  }
+  header .container-header h2 {
+    font-size: 1.5rem;
+  }
+  header .container-header .input-location {
+    width: 85%;
+    height: 45px;
+  }
   header .container-header .input-location input {
-    width: 80%;
+    width: 85%;
+  }
+  header .container-header .input-location .submit {
+    width: 15%;
   }
   .container-data {
-    margin-top: -25rem;
     height: 19rem;
+    top: 50%;
+    padding: 5%;
   }
   .container-data .location > li {
     display: -ms-grid;
@@ -190,6 +230,10 @@ header .container-header .input-location button {
   }
   .container-data .location > li span {
     display: none;
+  }
+  .container-data .location > li ul {
+    text-align: center;
+    margin: 0;
   }
 }
 /*# sourceMappingURL=style.css.map */
